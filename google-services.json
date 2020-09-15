@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "34326015795",
+    "firebase_url": "https://watchlist-c3ead.firebaseio.com",
+    "project_id": "watchlist-c3ead",
+    "storage_bucket": "watchlist-c3ead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34326015795:android:618a25d3cca203ffbc5846",
+        "android_client_info": {
+          "package_name": "np.com.joshisijan.watchlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34326015795-1etbm7vc7saj0s051p4a5aopp4pkkoh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4i_YbkqzAJ3KXeKZy7wp_R6-Lk3wJhXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34326015795-1etbm7vc7saj0s051p4a5aopp4pkkoh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

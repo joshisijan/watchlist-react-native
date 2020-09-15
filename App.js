@@ -1,21 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from "react-navigation-tabs";
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import AccountScreen from "./src/screens/AccountScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import SearchScreen from "./src/screens/SearchScreen";
+import LoginScreen from "./src/screens/LoginScreen";
+import { setNavigator } from "./src/navigationRef";
+import React from "react";
+import * as color from './src/colors';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigation = createSwitchNavigator(
+  {
+    loginFlow: LoginScreen,
+    mainFlow: createBottomTabNavigator(
+      {
+        Home: HomeScreen,
+        Search: SearchScreen,
+        Account: AccountScreen,
+      },
+      {
+        defaultNavigationOptions: {
+          tabBarOptions: {
+            activeTintColor: 'white',
+            inactiveTintColor: color.sand,
+            inactiveBackgroundColor: color.black,
+            activeBackgroundColor: color.black,
+            style: {
+              borderTopWidth: 0,
+            }
+          },
+        }
+      }
+    ),
   },
-});
+  {
+    initialRouteName: "mainFlow",
+  }
+);
+
+const App = createAppContainer(navigation);
+
+export default () => {
+  return (
+    <App
+      ref={(navigator) => {
+        setNavigator(navigator);
+      }}
+    />
+  );
+};
+

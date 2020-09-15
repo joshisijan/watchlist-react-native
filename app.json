@@ -17,10 +17,21 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "np.com.joshisijan.watchlist",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.34326015795-3griqf588oeibjfqio6ajpd44g42jl8e"
+        }
+      },
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "np.com.joshisijan.watchlist",
+      "googleServicesFile": "./google-services.json"
     }
   }
 }
