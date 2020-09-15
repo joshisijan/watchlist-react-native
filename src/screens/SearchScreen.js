@@ -1,29 +1,39 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from "expo-status-bar";
 import * as color from "../colors";
 import Spacer from "../components/Spacer";
 import { Input } from "react-native-elements";
-import mainStyle from '../styles/mainStyles';
+import mainStyle from "../styles/mainStyles";
+
+import theMovieDb from "../api/theMovieDb";
 
 const SearchScreen = () => {
+
+  useEffect(() => {
+    theMovieDb
+    .get("search/multi", { params: { query: "a" } })
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+  });
+  
   return (
     <SafeAreaView style={mainStyle.container}>
-      <StatusBar style="light" />
+      <StatusBar style='light' />
       <View>
-      <Text style={mainStyle.headerText}>Search</Text>
-      <Spacer>
-      <Text style={mainStyle.text}>
-        Search your favourite Movies, TV Shows and Animes here.
-      </Text>
-      </Spacer>
-      <Input
-          placeholder="Search Movies, TV Shows and Animes"
+        <Text style={mainStyle.headerText}>Search</Text>
+        <Spacer>
+          <Text style={mainStyle.text}>
+            Search your favourite Movies, TV Shows and Animes here.
+          </Text>
+        </Spacer>
+        <Input
+          placeholder='Search Movies, TV Shows and Animes'
           style={styles.searchBox}
           placeholderTextColor={color.black}
-          autoCapitalize="none"
+          autoCapitalize='none'
           autoCorrect={false}
         />
       </View>
@@ -44,10 +54,10 @@ export default SearchScreen;
 
 const styles = StyleSheet.create({
   searchBox: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     color: color.black,
     paddingHorizontal: 15,
     paddingVertical: 8,
     fontSize: 14,
-  }
+  },
 });
