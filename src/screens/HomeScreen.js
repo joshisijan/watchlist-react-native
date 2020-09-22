@@ -4,7 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import * as color from "../colors";
-import mainStyle from '../styles/mainStyles';
+import mainStyle from "../styles/mainStyles";
+
 
 const HomeScreen = () => {
   return (
@@ -12,6 +13,7 @@ const HomeScreen = () => {
       <StatusBar style='light' />
       <View>
         <Text style={mainStyle.headerText}>Good Night</Text>
+        
       </View>
     </SafeAreaView>
   );
@@ -28,6 +30,4 @@ HomeScreen.navigationOptions = {
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
- 
-});
+const styles = StyleSheet.create({});

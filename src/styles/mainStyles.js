@@ -15,5 +15,12 @@ export default mainStyles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 40,
     marginHorizontal: 15,
+  },
+  button: {
+    backgroundColor: color.green,
+    borderRadius: 0,
+  },
+  buttonTitle: {
+    fontSize: 12,
   }
 });
